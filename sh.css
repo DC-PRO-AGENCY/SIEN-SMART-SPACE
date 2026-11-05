@@ -1238,3 +1238,56 @@ body[data-ruta]>main,body[data-ruta]>footer,body[data-ruta]>.cabecera{visibility
   .sh-diario__lado .sh-nota__img{position:absolute;top:0;bottom:0;left:0;width:38%;height:100%;margin:0;grid-row:auto;border-radius:var(--r-3) 0 0 var(--r-3)}
 }
 @media(min-width:900px){.sh-diario__lado .sh-nota__img{grid-column:auto;grid-row:auto}}
+/* "Hablemos de tu desarrollo" en una línea */
+.sh-red__reporte .btn{white-space:nowrap;padding-inline:var(--s-4);font-size:.9375rem;justify-self:start;max-width:100%}
+@media(min-width:900px){.sh-red{grid-template-columns:minmax(0,2fr) auto minmax(310px,1.15fr)}}
+@media(min-width:900px) and (max-width:1099px){.sh-red{grid-template-columns:minmax(0,1fr)}.sh-red__flecha .sh-ico{transform:rotate(90deg)}}
+/* paquetes y Care: tarjetas del mismo alto y precio alineado abajo */
+.sh-paqs>li{display:grid}
+.sh-paqs .sh-puerta{height:100%;grid-template-rows:auto auto auto 1fr auto auto}
+.sh-paqs .sh-puerta>em{align-self:end}
+@media(max-width:639px){.sh-paqs .sh-ficha{grid-template-rows:auto 1fr auto}.sh-ficha>em,.sh-ficha>.btn{align-self:end}}
+
+/* ── quiz: opciones legibles (DC PRO, 2026-11-05) ──
+   Con 720px de caja, 32px de relleno, ícono y el punto de "elegida" en la
+   misma fila, al texto de cada opción le quedaban ~100px. */
+@media(min-width:900px){.sh-quiz[data-pantalla=pregunta] .sh-quiz__cuerpo{max-width:940px}}
+.sh-quiz .sh-op{position:relative;padding:var(--s-3) var(--s-6) var(--s-3) var(--s-4);gap:var(--s-3);line-height:1.35;text-wrap:pretty;min-height:60px}
+.sh-quiz .sh-op .sh-ico{width:24px;height:24px;flex:none}
+.sh-quiz .sh-op[aria-pressed=true]:after,.sh-quiz .sh-op[aria-checked=true]:after{position:absolute;top:10px;right:10px;margin:0;width:14px;height:14px;box-shadow:inset 0 0 0 3px var(--tinta-2)}
+.sh-quiz .sh-opciones{gap:var(--s-3)}
+/* 3 opciones: 1 columna hasta 899px, 3 columnas desde 900px */
+@media(min-width:600px) and (max-width:899px){.sh-quiz .sh-opciones--3{grid-template-columns:minmax(0,1fr)}}
+@media(min-width:900px){.sh-quiz .sh-opciones--3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ── menú móvil (DC PRO, 2026-11-05) ──
+   .cabecera lleva transform y, al bajar, backdrop-filter: ambos convierten a
+   la cabecera en el bloque contenedor del panel position:fixed, que quedaba
+   del alto de la cabecera (en iPhone se veía el menú encima de la página).
+   Con el panel abierto se quitan y el panel cubre toda la pantalla. */
+html[data-panel-abierto] .cabecera{transition:none!important;transform:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html[data-panel-abierto],html[data-panel-abierto] body{overflow:hidden}
+.cabecera__panel{height:100vh;height:100dvh;overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start}
+html[data-panel-abierto] .cabecera__fila .sh-marca,html[data-panel-abierto] .cabecera__fila .cabecera__cta{visibility:hidden}
+/* celular: preguntas de 4+ opciones (cortas) en 2 columnas para verlas todas sin scroll */
+@media(max-width:599px){
+  .sh-quiz .sh-opciones--cortas:not(.sh-opciones--3){grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-2)}
+  .sh-quiz .sh-opciones--cortas:not(.sh-opciones--3) .sh-op{min-height:56px;padding:var(--s-3) var(--s-5) var(--s-3) var(--s-3);gap:var(--s-2);font-size:.9375rem}
+  .sh-quiz .sh-op .sh-ico{width:22px;height:22px}
+}
+[data-quiz-cambiar]{white-space:nowrap}
+
+/* celular: textos largos en 1 columna compacta; cabecera de pregunta compacta */
+@media(max-width:599px){
+  .sh-quiz[data-pantalla=pregunta] .sh-quiz__cuerpo{padding-top:var(--s-4)}
+  .sh-quiz[data-pantalla=pregunta] .sh-pantalla{gap:var(--s-3)}
+  .sh-quiz[data-pantalla=pregunta] .sh-pantalla h2,.sh-quiz[data-pantalla=pregunta] .sh-pantalla h1{font-size:1.5rem}
+  .sh-quiz[data-pantalla=pregunta] .sh-pantalla .lead{font-size:1rem;line-height:1.45}
+  .sh-quiz .sh-opciones:not(.sh-opciones--cortas):not(.sh-opciones--espacio) .sh-op{min-height:48px;padding:var(--s-2) var(--s-6) var(--s-2) var(--s-4);font-size:.9375rem}
+  .sh-quiz .sh-opciones:not(.sh-opciones--cortas):not(.sh-opciones--espacio){gap:var(--s-2)}
+}
+/* resultado en celular: el momento de la escena baja de renglón si no cabe */
+@media(max-width:759px){.sh-relato .sh-escena{flex-wrap:wrap;row-gap:2px}.sh-relato .sh-escena b{flex:1 1 auto;min-width:0}}
+/* laptop: preguntas de 5+ opciones en 3 columnas (7 opciones en 2 columnas quedaban bajo la barra) */
+@media(min-width:900px){.sh-quiz .sh-opciones:not(.sh-opciones--3):has(>.sh-op:nth-child(5)){grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:599px){[data-quiz-marca]{font-size:.75rem;line-height:1.3}[data-quiz-cambiar]{min-height:40px;padding-inline:var(--s-4);font-size:.875rem}}
