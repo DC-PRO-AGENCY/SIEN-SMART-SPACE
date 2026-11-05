@@ -1,0 +1,261 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   SIEN Smart Space · variables.css
+   Capa de marca · DC PRO Agency — Kit portable (base dcpro.mx 2026-08)
+
+   Es la ÚNICA hoja que se reescribe por cliente. Conserva TODOS los nombres
+   de token del kit para que sistema.css e interacciones.js entren sin tocar
+   una línea. Los nombres cromáticos del kit (--cian, --azul, --purpura,
+   --rosa) se conservan como NOMBRES DE ROL; su valor es el de la marca.
+
+   ── DE DÓNDE SALEN ESTOS VALORES ───────────────────────────────────────────
+   Canon      · literal del manual «Brand Guidelines v1.0» (sep 2026):
+                SPACE DEEP #08211F · GREEN MINERAL #4F7F79 · MINT LIGHT #B8DDD7
+                WHITE SOFT #F6FAF8 · INK BLACK #0A1211 · degradado deep→mint.
+   Propuesta  · derivado por el método de doce roles de DC PRO: mismo matiz,
+                sólo cambia luminosidad hasta cumplir el umbral WCAG del fondo
+                donde se usa (3.0 texto grande · 4.5 texto normal).
+   Fuente de verdad: «Guía de Estilos · Design Tokens · SIEN Smart Space v1.0».
+
+   NOMBRE PROVISIONAL · «SIEN Smart Space» sustituye a «SPACE HOME» a reserva
+   de la consulta ante la Secretaría de Economía. El imagotipo se conserva;
+   el wordmark lo entrega diseño. PENDIENTE NOMBRE.
+
+   Todas las razones anotadas están CALCULADAS (fórmula WCAG 2.x) sobre el
+   fondo donde el color se usa. Cambiar un valor obliga a repetir la medición.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1 · COLOR DE MARCA
+   ════════════════════════════════════════════════════════════════════════ */
+
+  /* --- Tinta · SPACE DEEP, el fondo principal del manual ---------------------
+     Territorio oscuro: héroe, escenas fijadas, cierre, pie. Blanco rinde
+     16.83:1. El sitio es dark-first porque el color de acción (mint) sólo
+     contrasta sobre esta superficie. */
+  --tinta:              #08211F;   /* Canon · SPACE DEEP · 16.83:1 con blanco   */
+  --tinta-2:            #112C2A;   /* Propuesta · deep elevado · tarjetas sobre deep */
+  --tinta-3:            #1A3835;   /* Propuesta · chapas, filos, vidrio          */
+
+  /* --- Mint · el acento sobre oscuro (rol brand del kit) ---------------------
+     El manual designa MINT LIGHT para acentos, CTA y estados activos. Sobre
+     tinta rinde 11.51:1: puede ser texto y relleno. Sobre papel rinde 1.46:1:
+     NUNCA es texto ni botón sobre claro; para eso existen los escalones
+     mineral de abajo, mismo matiz, sólo más hondos. */
+  --cian:               #B8DDD7;   /* Canon · MINT LIGHT · acento sobre tinta   */
+  --cian-titulo:        #4F7F79;   /* Canon · GREEN MINERAL · 4.52:1 papel · titular ≥24px o botón */
+  --cian-texto:         #3A6660;   /* Propuesta · 6.46:1 papel · 6.14:1 luz · antetítulos */
+  --cian-hondo:         #2F5651;   /* Propuesta · 8.17:1 papel · cifras, íconos sobre claro */
+  --cian-brisa:         #FBFDFD;   /* Propuesta · veladura 6 %                  */
+  --cian-tenue:         #F6FBFA;   /* Propuesta · tinte 12 % · fondos          */
+  --cian-suave:         #EDF6F5;   /* Propuesta · 25 % · chips sobre claro      */
+  --cian-claro:         #B8DDD7;   /* Canon · sobre tinta 11.51:1               */
+
+  /* --- Green Mineral · bloques, soporte, iconografía (roles --azul/--purpura) -
+     --azul es GREEN MINERAL literal: relleno y planos; como texto sólo sobre
+     papel puro (4.52:1), no sobre WHITE SOFT (4.30:1). --purpura es el
+     escalón hondo del mismo matiz: texto y enlaces sobre claro (8.17:1). */
+  --azul:               #4F7F79;   /* Canon · GREEN MINERAL                     */
+  --azul-claro:         #8FBDB5;   /* Propuesta · sobre tinta 8.11:1            */
+  --azul-tenue:         #E6F0EE;   /* Propuesta                                 */
+  --purpura:            #2F5651;   /* Propuesta · plano hondo · 8.17:1 papel   */
+  --purpura-claro:      #7AAEA6;   /* Propuesta · sobre tinta 6.76:1            */
+  --purpura-tenue:      #E9F1EF;   /* Propuesta                                 */
+
+  /* --- Mint de petición · el color de acción (rol action) --------------------
+     El manual cierra la paleta a cinco colores y reserva MINT LIGHT al CTA.
+     Marca ÚNICAMENTE lo que se le pide al visitante: iniciar el quiz,
+     solicitar levantamiento, escribir por WhatsApp. A lo sumo uno por
+     pantalla, nunca en la cabecera, nunca como decoración.
+
+     Medido: tinta sobre #B8DDD7 rinde 11.51:1; blanco sobre él 1.46:1. POR ESO
+     EL BOTÓN DE PETICIÓN LLEVA TINTA, no blanco. Y por eso el botón mint sólo
+     vive sobre tinta, degradado o fotografía: sobre papel desaparece. Para
+     texto de petición sobre claro existe --rosa-honda. */
+  --rosa:               #B8DDD7;   /* Canon · relleno de petición               */
+  --rosa-vivo:          #A3D2CA;   /* Propuesta · hover · tinta encima 10.12:1  */
+  --rosa-honda:         #3A6660;   /* Propuesta · 6.46:1 papel · texto de petición sobre claro */
+  --rosa-tenue:         #DFF0ED;   /* Propuesta · opción elegida, nota de decisión */
+  --sobre-rosa:         var(--tinta);
+
+  /* --- Degradados · sólo con las paradas que sobreviven en su superficie ----
+     --grad es el degradado oficial (SPACE DEEP → MINT LIGHT), Canon. Fondo de
+     héroe, separadores y bandas de CTA; nunca como texto.
+     --grad-tinta: como TEXTO sobre tinta; peor parada 11.51:1.
+     --grad-papel: como TEXTO sobre papel; peor parada 6.46:1. */
+  --grad:        linear-gradient(135deg,#08211F 0%,#B8DDD7 100%);
+  --grad-h:      linear-gradient(90deg,#08211F 0%,#B8DDD7 100%);
+  --grad-tinta:  linear-gradient(96deg,#B8DDD7 0%,#E3F2EF 55%,#FFFFFF 100%);
+  --grad-papel:  linear-gradient(96deg,#3A6660 0%,#2F5651 48%,#08211F 100%);
+
+  /* --- Superficies y texto · neutros teñidos al matiz de la tinta ---------- */
+  --papel:              #FFFFFF;
+  --luz:                  #F6FAF8;   /* Canon · WHITE SOFT · sección clara        */
+  --texto:              #0A1211;   /* Canon · INK BLACK · 18.96:1 papel         */
+  --texto-medio:        #566B67;   /* Propuesta · 5.68:1 papel · 5.40:1 luz     */
+  --texto-tenue:        #5F736F;   /* Propuesta · 5.04:1 papel · 4.79:1 luz · 4.52:1 gris-claro */
+  --sobre-tinta:        #FFFFFF;   /* 16.83:1                                    */
+  --sobre-tinta-tenue:  #B7CAC5;   /* Propuesta · 9.83:1 tinta                  */
+  --sobre-tinta-media:  #95ABA6;   /* Propuesta · 6.94:1 tinta · 6.10:1 tinta-2 */
+  --linea:              #D3DFDE;
+  --linea-suave:        #E6EEEC;
+  --gris-claro:         #EEF4F2;
+
+  /* --- Canal · WhatsApp -------------------------------------------------------
+     El manual no usa el verde de WhatsApp: el CTA de WhatsApp es mint (p. 18,
+     «Hablar por WhatsApp»). Es la misma acción que el levantamiento, así que
+     lleva el mismo color de petición. Tinta encima: 11.51:1. */
+  --wa:                 #B8DDD7;
+  --sobre-wa:           var(--tinta);
+
+  /* --- Luz cálida · el color de INTERACCIÓN, no de superficie -------------------
+     Propuesta (nov 2026) · ámbar de 2700 K tomado de la luz de las fotografías
+     del manual. Es lo que se enciende: hover, foco, activo, toggles encendidos.
+     Nunca relleno de bloque, nunca texto sobre papel (1.85:1). Sobre tinta
+     rinde 9.12:1, así que puede ser texto pequeño sobre oscuro si hiciera falta. */
+  --ambar:                #F2B35C;   /* Propuesta · luz encendida                 */
+  --ambar-rgb:            242,179,92;
+  --halo-ambar:           0 0 0 2px rgba(var(--ambar-rgb),.55), 0 0 26px 2px rgba(var(--ambar-rgb),.45), 0 10px 30px -10px rgba(var(--ambar-rgb),.6);
+  --halo-ambar-suave:     0 0 0 1px rgba(var(--ambar-rgb),.5), 0 0 22px 0 rgba(var(--ambar-rgb),.3);
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2 · CANALES RGB
+   ══════════════════════════════════════════════════════════════════════════ */
+  --cian-rgb:           184,221,215;
+  --azul-rgb:           79,127,121;
+  --purpura-rgb:        47,86,81;
+  --rosa-rgb:           184,221,215;
+  --tinta-rgb:          8,33,31;
+  --papel-rgb:          255,255,255;
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3 · VELADURAS
+   ══════════════════════════════════════════════════════════════════════════ */
+  --velo-cabecera:      rgba(var(--papel-rgb),.88);
+  --velo-cabecera-tinta:rgba(var(--tinta-rgb),.82);   /* medido sobre el cuadro más claro de casa-exterior: ver sh.css */
+  --velo-chapa:         rgba(var(--papel-rgb),.08);
+  --velo-chapa-borde:   rgba(var(--papel-rgb),.16);
+  --velo-cuerpo:        rgba(var(--cian-rgb),.05);
+  --halo-cta:           rgba(var(--rosa-rgb),.35);
+
+  /* Glass del manual: blanco 10 % + borde blanco 35 % + blur 12 px */
+  --vidrio-desenfoque:  12px;
+  --vidrio-saturacion:  1.3;
+  --vidrio-fondo:       rgba(var(--papel-rgb),.10);
+  --vidrio-fondo-alto:  rgba(var(--papel-rgb),.14);
+  --vidrio-borde:       rgba(var(--papel-rgb),.35);
+  --vidrio-filo:        inset 0 1px 0 rgba(var(--papel-rgb),.22);
+  --vidrio-asiento:     rgba(var(--tinta-rgb),.52);
+  --vidrio-claro-fondo: rgba(var(--papel-rgb),.66);
+  --vidrio-claro-borde: rgba(var(--tinta-rgb),.08);
+  --vidrio-claro-filo:  inset 0 1px 0 rgba(var(--papel-rgb),.9);
+  --vidrio-hondo:       rgba(var(--tinta-rgb),.3);
+  --destello:           rgba(var(--papel-rgb),.14);
+  --halo-cian:          rgba(var(--cian-rgb),.18);
+  --halo-purpura:       rgba(var(--purpura-rgb),.22);
+  --regla-apagada:      .22;
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4 · TIPOGRAFÍA
+   Canon · Montserrat es la única familia del sistema (manual 03.1). El kit
+   pide una pareja mono para etiquetas y datos; aquí la «mono» es la misma
+   Montserrat en SemiBold, mayúsculas y tracking, como los labels del manual.
+   Titulares en caja baja, Bold. Cuerpo Regular (el kit usa Light; el manual
+   no tiene Light). Sustitutos: Arial / Helvetica. Sin sustitución automática.
+   ══════════════════════════════════════════════════════════════════════════ */
+  --ff:"Montserrat",Arial,Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ff-mono:"Montserrat",Arial,Helvetica,sans-serif;
+
+  --t-hero:   clamp(2.25rem, 1.2rem + 4.6vw, 3.75rem);
+  --t-h2:     clamp(1.65rem, 1.15rem + 2.2vw, 2.5rem);
+  --t-h3:     clamp(1.15rem, 1.05rem + .45vw, 1.375rem);
+  --t-lead:   clamp(1.05rem, .97rem + .4vw, 1.2rem);
+  --t-body:   clamp(1rem, .97rem + .13vw, 1.0625rem);
+  --t-small:  .875rem;
+  --t-micro:  .75rem;
+  --t-nano:   .72rem;
+  --t-cifra:  clamp(2.5rem, 1.6rem + 3.8vw, 4.5rem);
+  --t-escena: clamp(1.55rem, 1.1rem + 1.95vw, 2.375rem);
+  --t-fase:   clamp(2rem, 1.3rem + 3vw, 3.25rem);
+
+  --lh-nodo: 1; --lh-hero: 1.05; --lh-titular: 1.15; --lh-h2: 1.15;
+  --lh-tarjeta: 1.4; --lh-lead: 1.5; --lh-cuerpo: 1.6; --lh-lectura: 1.7;
+
+  --tr-hero: -.02em; --tr-h2: -.015em; --tr-h3: -.01em; --tr-cifra: -.02em;
+  --tr-rotulo: .14em; --tr-nano: .12em;
+
+  --peso-light: 400; --peso-normal: 400; --peso-medio: 500;
+  --peso-semi: 600; --peso-fuerte: 700; --peso-extra: 700;
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5 · ESPACIO Y RITMO
+   ══════════════════════════════════════════════════════════════════════════ */
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 2.5rem;
+  --s-8:  clamp(2rem, 1.5rem + 2vw, 3rem);
+  --s-9:  clamp(3rem, 2.2rem + 3.2vw, 4.5rem);
+  --s-10: clamp(4rem, 2.8rem + 5vw, 7rem);
+  --s-11: clamp(2.5rem, 1.9rem + 2.6vw, 4rem);
+
+  --r-rotulo:  var(--s-4);
+  --r-titular: var(--s-5);
+  --r-parrafo: var(--s-5);
+  --r-bloque:  var(--s-8);
+  --r-remate:  var(--s-7);
+  --r-seccion: var(--s-10);
+
+  --ancho:        1180px;
+  --ancho-texto:  62ch;
+  --alto-header:  72px;
+  --cabecera-alto:     64px;
+  --cabecera-alto-mov: 56px;
+  --cabecera-z:        90;
+  --toque:        44px;
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6 · RADIOS · Canon: botones píldora; tarjetas 20 px; tiles y campos 14 px
+   ══════════════════════════════════════════════════════════════════════════ */
+  --r-1: 8px; --r-2: 14px; --r-3: 20px; --r-4: 24px; --r-pill: 999px;
+  --r-foco: var(--r-1);
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7 · ELEVACIÓN · sombra teñida a la tinta; en claro casi nula (manual)
+   ══════════════════════════════════════════════════════════════════════════ */
+  --filo: inset 0 1px 0 rgba(var(--papel-rgb),.92);
+  --e-1: 0 0 0 1px rgba(var(--tinta-rgb),.04), 0 1px 2px rgba(var(--tinta-rgb),.03);
+  --e-2: 0 0 0 1px rgba(var(--tinta-rgb),.05), 0 2px 4px rgba(var(--tinta-rgb),.04), 0 16px 32px -18px rgba(var(--tinta-rgb),.18);
+  --e-3: 0 0 0 1px rgba(var(--tinta-rgb),.05), 0 4px 8px rgba(var(--tinta-rgb),.05), 0 30px 56px -26px rgba(var(--tinta-rgb),.24);
+  --e-cta:   0 1px 2px rgba(var(--tinta-rgb),.1),  0 8px 18px -6px var(--halo-cta);
+  --e-cta-h: 0 2px 4px rgba(var(--tinta-rgb),.12), 0 14px 28px -6px var(--halo-cta);
+  --e-card: var(--e-1);
+  --r-card: var(--r-3);
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8 · MOVIMIENTO · idéntico al kit; no es de marca
+   ══════════════════════════════════════════════════════════════════════════ */
+  --curva: cubic-bezier(.2,.7,.3,1);
+  --curva-entrada: cubic-bezier(.16,1,.3,1);
+  --curva-fina: cubic-bezier(.16,1,.3,1);
+  --curva-simple: ease;
+  --dur-instante: .18s; --dur-rapida: .22s; --dur-media: .32s;
+  --dur-entrada: .52s; --dur-revelado: .9s; --dur-larga: .7s;
+  --vel: var(--dur-rapida);
+  --paso-cadencia: 90ms;
+  --entra-y: 30px; --entra-x: 20px; --entra-escala: .972;
+  --dur-nula: .001ms;
+  --dur-linea: 1.08s; --cadencia-linea: 105ms; --cadencia-pal: 26ms; --linea-fuera: 108%;
+
+  /* Cámara Z del túnel */
+  --prof-lente: 1100px; --prof-camara: 460px;
+  --prof-lejos: -900px; --prof-medio: -420px; --prof-cerca: -120px;
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9 · PARÁMETROS DE INSTANCIA · contrato marcado ↔ CSS, no valores de marca
+   ══════════════════════════════════════════════════════════════════════════ */
+  --d: 0;
+  --halo-p: 0;
+  --escena-p: 0;
+}
+[data-tunel]{--tunel-p:0}
+[data-cifra]{--cifra-p:0}

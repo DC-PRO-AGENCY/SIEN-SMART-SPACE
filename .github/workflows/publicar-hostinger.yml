@@ -1,0 +1,39 @@
+# Publica el sitio en Hostinger (public_html) en cada merge a main.
+# Sube por FTP solo los archivos que cambiaron desde la última publicación
+# (el estado se guarda en el servidor, en .ftp-deploy-sync-state.json).
+# Credenciales: secretos del repositorio FTP_SERVER, FTP_USERNAME y FTP_PASSWORD.
+
+name: Publicar en Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: publicar-hostinger
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Subir cambios a public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          # El certificado del servidor FTP de Hostinger es *.hstgr.io: la conexión
+          # va cifrada, pero sin exigir que el nombre del certificado coincida.
+          security: loose
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            README.md

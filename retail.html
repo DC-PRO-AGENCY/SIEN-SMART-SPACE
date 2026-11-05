@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.facebook.com; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<title>Smart Space Retail · Un local que abre, cierra y avisa</title>
+<meta name="description" content="Luz, horarios, accesos y fugas bajo control en cada sucursal, con evidencia de apertura y cierre sin pedirle nada al personal. Paquetes desde $35,900 + IVA.">
+<meta name="robots" content="noindex">
+<!-- SIEN Smart Space · sitio v2 · prototipo · noindex a propósito -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="sistema.css">
+<link rel="stylesheet" href="sh.css">
+<script src="interacciones.js" defer></script>
+<script src="sh.js" defer></script>
+<link rel="canonical" href="https://PENDIENTE-DOMINIO/retail">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIEN Smart Space">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Smart Space Retail · Un local que abre, cierra y avisa">
+<meta property="og:description" content="Luz, horarios, accesos y fugas bajo control en cada sucursal, con evidencia de apertura y cierre sin pedirle nada al personal. Paquetes desde $35,900 + IVA.">
+<meta property="og:image" content="assets/og-smart-space.jpg">
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i2-casa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.6 2.8 10.4a1.2 1.2 0 0 0 .8 2.1H5v7.3A1.9 1.9 0 0 0 6.9 21.7h3.1v-5.2a2 2 0 0 1 4 0v5.2h3.1a1.9 1.9 0 0 0 1.9-1.9v-7.3h1.4a1.2 1.2 0 0 0 .8-2.1z"/></symbol>
+<symbol id="i2-edificio" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.5 21.5V4a1.6 1.6 0 0 1 1.6-1.6h7.8A1.6 1.6 0 0 1 15.5 4v4h3A1.5 1.5 0 0 1 20 9.5v12zM7.6 6v2.4h2.4V6zm0 4.6V13h2.4v-2.4zm4-4.6v2.4H14V6zm0 4.6V13H14v-2.4zM7.6 15.2v2.4h2.4v-2.4zm4 0v2.4H14v-2.4zm4.2-3.3v2.3h2.3v-2.3zm0 4v2.3h2.3v-2.3z"/></symbol>
+<symbol id="i2-tienda" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3.2 4.2h17.6l1.3 4.3a3.3 3.3 0 0 1-2.1 3.9v8.1a1.3 1.3 0 0 1-1.3 1.3H5.3A1.3 1.3 0 0 1 4 20.5v-8.1a3.3 3.3 0 0 1-2.1-3.9zM7 13.5v5.3h4.2v-5.3zm6.6 0v5.3H17v-5.3z"/></symbol>
+<symbol id="i2-bodega" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M2.5 9.2 12 3.4l9.5 5.8v12.3H2.5zM6 12.6v6h3.2v-3h2.3v3h1.6v-3h2.3v3H18v-6z"/></symbol>
+<symbol id="i2-obra" viewBox="0 0 24 24"><path fill="currentColor" d="M2.5 19.5h19v2.5h-19zM5 17.5V9.6l7-5.6 7 5.6v7.9h-4.4v-5H9.4v5z"/></symbol>
+<symbol id="i2-sillon" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.5 5.5h13a2.5 2.5 0 0 1 2.5 2.5v1.3a2.7 2.7 0 0 0-2.1 2.6V14H5.1v-2.1A2.7 2.7 0 0 0 3 9.3V8a2.5 2.5 0 0 1 2.5-2.5zM1.6 11.9a1.5 1.5 0 0 1 1.5-1.5h.4a1.5 1.5 0 0 1 1.5 1.5v3.3h14v-3.3a1.5 1.5 0 0 1 1.5-1.5h.4a1.5 1.5 0 0 1 1.5 1.5v5.4a1.6 1.6 0 0 1-1.6 1.6h-.4v1.3a1 1 0 0 1-2 0v-1.3H5.6v1.3a1 1 0 0 1-2 0v-1.3h-.4a1.6 1.6 0 0 1-1.6-1.6z"/></symbol>
+<symbol id="i2-cama" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M2.5 5.2a1.3 1.3 0 0 1 2.6 0v4.6h5.4V8.2a1.7 1.7 0 0 1 1.7-1.7h6.1a3.2 3.2 0 0 1 3.2 3.2v9.6a1.3 1.3 0 0 1-2.6 0v-2.1H5.1v2.1a1.3 1.3 0 0 1-2.6 0zM6 7.2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></symbol>
+<symbol id="i2-silla" viewBox="0 0 24 24"><path fill="currentColor" d="M8 2.2h8a2 2 0 0 1 2 2v5.6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4.2a2 2 0 0 1 2-2zM4.6 12.6h14.8a1.4 1.4 0 0 1 0 2.8h-6v2.2h3.8a1.2 1.2 0 0 1 0 2.4h-3.8v1a1.4 1.4 0 0 1-2.8 0v-1H6.8a1.2 1.2 0 0 1 0-2.4h3.8v-2.2h-6a1.4 1.4 0 0 1 0-2.8z"/></symbol>
+<symbol id="i2-cafetera" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3.6 8.4h12.2a1.2 1.2 0 0 1 1.2 1.2v.6h1.6a3.2 3.2 0 0 1 0 6.4h-1.9a6.2 6.2 0 0 1-5.9 4.2H8.4a6.2 6.2 0 0 1-6-6.4V9.6a1.2 1.2 0 0 1 1.2-1.2zm13.4 4.2v2h1.6a1 1 0 0 0 0-2z"/><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M7.4 2.2c-1 1.2-1 2.3 0 3.5M10.9 2.2c-1 1.2-1 2.3 0 3.5M14.4 2.2c-1 1.2-1 2.3 0 3.5"/></symbol>
+<symbol id="i2-horno" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3 4.5A1.5 1.5 0 0 1 4.5 3h15A1.5 1.5 0 0 1 21 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5zM6.2 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zm3.8 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zm3.8 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM5.8 10.2v8h12.4v-8z"/></symbol>
+<symbol id="i2-regadera" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4.4a7 7 0 0 0-7 7v.4a1.3 1.3 0 0 0 1.3 1.3h11.4a1.3 1.3 0 0 0 1.3-1.3v-.4a7 7 0 0 0-7-7zm0-3a1.4 1.4 0 0 1 1.4 1.4v1.6h-2.8V2.8A1.4 1.4 0 0 1 12 1.4zM2.8 6.2a1.4 1.4 0 0 1 1.4-1.4h1.3a1.4 1.4 0 0 1 0 2.8H4.2a1.4 1.4 0 0 1-1.4-1.4zM7.2 15.6a1.5 1.5 0 0 1 3 0v3a1.5 1.5 0 0 1-3 0zm3.3 0a1.5 1.5 0 0 1 3 0v5.6a1.5 1.5 0 0 1-3 0zm3.3 0a1.5 1.5 0 0 1 3 0v3a1.5 1.5 0 0 1-3 0z"/></symbol>
+<symbol id="i2-persiana" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3.5A1.5 1.5 0 0 1 4.5 2h15A1.5 1.5 0 0 1 21 3.5V5H3zM3 6.6h18v2.6H3zm0 4.2h18v2.6H3zm0 4.2h18v2.6H3zm7.3 4.2h3.4v1.4a1.7 1.7 0 0 1-3.4 0z"/></symbol>
+<symbol id="i2-mesa" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.6A1.6 1.6 0 0 1 3.6 5h16.8a1.6 1.6 0 0 1 0 3.2H19v10.3a1.5 1.5 0 0 1-3 0V14H8v4.5a1.5 1.5 0 0 1-3 0V8.2H3.6A1.6 1.6 0 0 1 2 6.6zM8 8.2V11h8V8.2z"/></symbol>
+<symbol id="i2-luz" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.8a6.6 6.6 0 0 0-3.6 12.1c.5.4.8.9.8 1.5v.6h5.6v-.6c0-.6.3-1.1.8-1.5A6.6 6.6 0 0 0 12 1.8zM9.2 17.6h5.6v1.2a1.2 1.2 0 0 1-1.2 1.2H10.4a1.2 1.2 0 0 1-1.2-1.2zM10 21.4h4a2 2 0 0 1-4 0z"/></symbol>
+<symbol id="i2-clima" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 1.8A3.4 3.4 0 0 0 8.6 5.2v7.5a5.4 5.4 0 1 0 6.8 0V5.2A3.4 3.4 0 0 0 12 1.8zm0 2.6a.8.8 0 0 1 .8.8v8.9l.6.4a2.8 2.8 0 1 1-2.8 0l.6-.4V5.2a.8.8 0 0 1 .8-.8z"/></symbol>
+<symbol id="i2-aire" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M3 8.3h11.2a2.6 2.6 0 1 0-2.6-2.6M3 12.5h15.4a2.8 2.8 0 1 1-2.8 2.8M3 16.7h7.6a2.3 2.3 0 1 1-2.3 2.3"/></symbol>
+<symbol id="i2-agua" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.9s7.4 7.6 7.4 13A7.4 7.4 0 0 1 4.6 14.9C4.6 9.5 12 1.9 12 1.9zm-3.2 12.6a1.1 1.1 0 0 0-2.2 0 5.5 5.5 0 0 0 3.6 5.1 1.1 1.1 0 1 0 .8-2 3.3 3.3 0 0 1-2.2-3.1z"/></symbol>
+<symbol id="i2-energia" viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 1.7a1 1 0 0 1 1.8.7l-1 7.1h4.3a1 1 0 0 1 .8 1.6L10.4 22.3a1 1 0 0 1-1.8-.7l1-7.1H5.3a1 1 0 0 1-.8-1.6z"/></symbol>
+<symbol id="i2-enchufe" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8.1 2a1.3 1.3 0 0 1 1.3 1.3v3.9h5.2V3.3a1.3 1.3 0 0 1 2.6 0v3.9h1.4a1.2 1.2 0 0 1 1.2 1.2v2.4a7.8 7.8 0 0 1-6.5 7.7v2.2a1.3 1.3 0 0 1-2.6 0v-2.2a7.8 7.8 0 0 1-6.5-7.7V8.4a1.2 1.2 0 0 1 1.2-1.2h1.4V3.3A1.3 1.3 0 0 1 8.1 2z"/></symbol>
+<symbol id="i2-acceso" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 2.5h14a1.5 1.5 0 0 1 1.5 1.5v16a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 20V4A1.5 1.5 0 0 1 5 2.5zm9.6 8a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></symbol>
+<symbol id="i2-candado" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 1.8a5.2 5.2 0 0 0-5.2 5.2v2.4H6.2A2.2 2.2 0 0 0 4 11.6v8.2A2.2 2.2 0 0 0 6.2 22h11.6a2.2 2.2 0 0 0 2.2-2.2v-8.2a2.2 2.2 0 0 0-2.2-2.2h-.6V7A5.2 5.2 0 0 0 12 1.8zm0 2.7A2.5 2.5 0 0 1 14.5 7v2.4h-5V7A2.5 2.5 0 0 1 12 4.5zm0 8.4a2 2 0 0 0-1 3.7v1.4a1 1 0 0 0 2 0v-1.4a2 2 0 0 0-1-3.7z"/></symbol>
+<symbol id="i2-camara" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8.9 3.5a1.3 1.3 0 0 1 1-.5h4.2a1.3 1.3 0 0 1 1 .5l1.5 2h3.3a2 2 0 0 1 2 2v10.5a2 2 0 0 1-2 2H4.1a2 2 0 0 1-2-2V7.5a2 2 0 0 1 2-2h3.3zM12 8.3a4.3 4.3 0 1 0 0 8.6 4.3 4.3 0 0 0 0-8.6zm0 2.5a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6z"/></symbol>
+<symbol id="i2-timbre" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.5 1.8h9a2.2 2.2 0 0 1 2.2 2.2v16a2.2 2.2 0 0 1-2.2 2.2h-9A2.2 2.2 0 0 1 5.3 20V4a2.2 2.2 0 0 1 2.2-2.2zM12 5a2.6 2.6 0 1 0 0 5.2A2.6 2.6 0 0 0 12 5zm0 8.6a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8z"/></symbol>
+<symbol id="i2-aviso" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.6a1.6 1.6 0 0 1 1.6 1.6v.6a6.4 6.4 0 0 1 4.8 6.2v4.6l1.7 2.4a1 1 0 0 1-.8 1.6H4.7a1 1 0 0 1-.8-1.6l1.7-2.4V10a6.4 6.4 0 0 1 4.8-6.2v-.6A1.6 1.6 0 0 1 12 1.6zM9.6 20h4.8a2.4 2.4 0 0 1-4.8 0z"/></symbol>
+<symbol id="i2-mensaje" viewBox="0 0 24 24"><path fill="currentColor" d="M4.3 3h15.4A2.3 2.3 0 0 1 22 5.3v9.4a2.3 2.3 0 0 1-2.3 2.3h-7.3l-4.6 3.9a1 1 0 0 1-1.6-.8V17H4.3A2.3 2.3 0 0 1 2 14.7V5.3A2.3 2.3 0 0 1 4.3 3zm3 5.4a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6zm4.7 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6zm4.7 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6z"/></symbol>
+<symbol id="i2-conversa" viewBox="0 0 24 24"><path fill="currentColor" d="M3.8 2.5h9.4A1.8 1.8 0 0 1 15 4.3v6a1.8 1.8 0 0 1-1.8 1.8H8.4l-3.1 2.6a.9.9 0 0 1-1.5-.7v-1.9h0A1.8 1.8 0 0 1 2 10.3v-6a1.8 1.8 0 0 1 1.8-1.8zm13.2 5.7h3.2A1.8 1.8 0 0 1 22 10v6a1.8 1.8 0 0 1-1.8 1.8h0v1.9a.9.9 0 0 1-1.5.7l-3.1-2.6H10.6A1.8 1.8 0 0 1 8.8 16v-1.6h4.4a3.8 3.8 0 0 0 3.8-3.8z"/></symbol>
+<symbol id="i2-persona" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6zM3.5 20a8.5 8.5 0 0 1 17 0 1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 20z"/></symbol>
+<symbol id="i2-grupo" viewBox="0 0 24 24"><path fill="currentColor" d="M8.6 3.2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm7.6 1.2a3.3 3.3 0 1 1 0 6.6 3.3 3.3 0 0 1 0-6.6zM1.6 19.2a7 7 0 0 1 14 0 1.3 1.3 0 0 1-1.3 1.3H2.9a1.3 1.3 0 0 1-1.3-1.3zm15.2 1.3a8.9 8.9 0 0 0-2-6.3 5.6 5.6 0 0 1 7.6 5.2 1.1 1.1 0 0 1-1.1 1.1z"/></symbol>
+<symbol id="i2-presencia" viewBox="0 0 24 24"><path fill="currentColor" d="M9 2.6a4.3 4.3 0 1 1 0 8.6 4.3 4.3 0 0 1 0-8.6zM1.5 20a7.5 7.5 0 0 1 15 0 1.4 1.4 0 0 1-1.4 1.4H2.9A1.4 1.4 0 0 1 1.5 20z"/><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M17.2 4.3a4.8 4.8 0 0 1 0 6.4M19.9 2.1a8.2 8.2 0 0 1 0 10.8"/></symbol>
+<symbol id="i2-voz" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.8a3.8 3.8 0 0 1 3.8 3.8v5.2a3.8 3.8 0 0 1-7.6 0V5.6A3.8 3.8 0 0 1 12 1.8z"/><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M5.6 10.6a6.4 6.4 0 0 0 12.8 0M12 17v4m-3.6 0h7.2"/></symbol>
+<symbol id="i2-encendido" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M12 3.2v8.2M6.9 6.4a7.6 7.6 0 1 0 10.2 0"/></symbol>
+<symbol id="i2-luna" viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 2.2a1 1 0 0 1 1.1 1.4 7.4 7.4 0 0 0 7.1 10.6 1 1 0 0 1 .9 1.5A9.8 9.8 0 1 1 13.6 2.2z"/></symbol>
+<symbol id="i2-sol" viewBox="0 0 24 24"><path fill="currentColor" d="M12 6.8a5.2 5.2 0 1 1 0 10.4 5.2 5.2 0 0 1 0-10.4z"/><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M12 1.8v2.3M12 19.9v2.3M1.8 12h2.3M19.9 12h2.3M4.8 4.8l1.6 1.6M17.6 17.6l1.6 1.6M4.8 19.2l1.6-1.6M17.6 6.4l1.6-1.6"/></symbol>
+<symbol id="i2-reloj" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 1.8a10.2 10.2 0 1 1 0 20.4 10.2 10.2 0 0 1 0-20.4zm0 4.4a1.2 1.2 0 0 0-1.2 1.2v5.1a1.2 1.2 0 0 0 .5 1l3.4 2.4a1.2 1.2 0 0 0 1.4-2l-2.9-2V7.4A1.2 1.2 0 0 0 12 6.2z"/></symbol>
+<symbol id="i2-grafica" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3.2a1.3 1.3 0 0 1 2.6 0v15.2h15.2a1.3 1.3 0 0 1 0 2.6H4.3A1.3 1.3 0 0 1 3 19.7zM7.4 12.3a1.5 1.5 0 0 1 3 0v3.4a1.5 1.5 0 0 1-3 0zm4.6-4a1.5 1.5 0 0 1 3 0v7.4a1.5 1.5 0 0 1-3 0zm4.6 2.4a1.5 1.5 0 0 1 3 0v5a1.5 1.5 0 0 1-3 0z"/></symbol>
+<symbol id="i2-chip" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8.4 1.8a1.1 1.1 0 0 1 1.1 1.1v1.5h1.4V2.9a1.1 1.1 0 0 1 2.2 0v1.5h1.4V2.9a1.1 1.1 0 0 1 2.2 0v1.5a2.6 2.6 0 0 1 2.6 2.6h1.5a1.1 1.1 0 0 1 0 2.2h-1.5v1.4h1.5a1.1 1.1 0 0 1 0 2.2h-1.5v1.4h1.5a1.1 1.1 0 0 1 0 2.2h-1.5a2.6 2.6 0 0 1-2.6 2.6v1.5a1.1 1.1 0 0 1-2.2 0v-1.5h-1.4v1.5a1.1 1.1 0 0 1-2.2 0v-1.5H9.5v1.5a1.1 1.1 0 0 1-2.2 0v-1.5a2.6 2.6 0 0 1-2.6-2.6H3.2a1.1 1.1 0 0 1 0-2.2h1.5v-1.4H3.2a1.1 1.1 0 0 1 0-2.2h1.5V9.2H3.2a1.1 1.1 0 0 1 0-2.2h1.5a2.6 2.6 0 0 1 2.6-2.6V2.9a1.1 1.1 0 0 1 1.1-1.1zM9 9v6h6V9z"/></symbol>
+<symbol id="i2-senal" viewBox="0 0 24 24"><path fill="currentColor" d="M12 16.6a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6z"/><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M7.6 13.6a6.2 6.2 0 0 1 8.8 0M4.3 10.3a10.9 10.9 0 0 1 15.4 0M1.6 6.8a14.7 14.7 0 0 1 20.8 0"/></symbol>
+<symbol id="i2-escudo" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 1.7l8.3 3.4v5.9c0 5.2-3.5 9.6-8.3 11.3C7.2 20.6 3.7 16.2 3.7 11V5.1zm3.9 7.4a1.2 1.2 0 0 0-1.7-1.7l-3.5 3.5-1.5-1.5a1.2 1.2 0 0 0-1.7 1.7l2.4 2.4a1.2 1.2 0 0 0 1.7 0z"/></symbol>
+<symbol id="i2-herramienta" viewBox="0 0 24 24"><path fill="currentColor" d="M15.4 2.3a6 6 0 0 0-6.2 8.1l-6.6 6.6a2.4 2.4 0 0 0 3.4 3.4l6.6-6.6a6 6 0 0 0 8.1-6.2 1 1 0 0 0-1.7-.5l-2.6 2.6-2.5-.7-.7-2.5 2.6-2.6a1 1 0 0 0-.4-1.6z"/></symbol>
+<symbol id="i2-libro" viewBox="0 0 24 24"><path fill="currentColor" d="M2.8 4.2A1.2 1.2 0 0 1 4 3h4.3a4.6 4.6 0 0 1 3.7 1.9A4.6 4.6 0 0 1 15.7 3H20a1.2 1.2 0 0 1 1.2 1.2v13.6A1.2 1.2 0 0 1 20 19h-4.3a3.4 3.4 0 0 0-2.7 1.3 1.3 1.3 0 0 1-2 0A3.4 3.4 0 0 0 8.3 19H4a1.2 1.2 0 0 1-1.2-1.2z"/></symbol>
+<symbol id="i2-mas" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i2-tinaco" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4 4.2A2.2 2.2 0 0 1 6.2 2h11.6A2.2 2.2 0 0 1 20 4.2v15.6a2.2 2.2 0 0 1-2.2 2.2H6.2A2.2 2.2 0 0 1 4 19.8zM6.8 11.6v7.2h10.4v-7.2c-1.7 1.3-3.5 1.3-5.2 0-1.7 1.3-3.5 1.3-5.2 0z"/></symbol>
+<symbol id="i2-flecha" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="M5 19 19 5M8.6 5H19v10.4"/></symbol>
+<symbol id="i2-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.6 4.6 4.6L19.5 6.8"/></symbol>
+<symbol id="i2-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2.2a7.8 7.8 0 1 1-4 14.5l-.3-.2-2.6.7.7-2.5-.2-.3A7.8 7.8 0 0 1 12 4.2zM8.9 7.6c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4l-.5-.3-1.8-.9c-.3-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5l-.9-2c-.2-.5-.4-.5-.6-.5h-.6z"/></symbol>
+</defs></svg>
+<header class="cabecera sh-cabecera-2" data-cabecera data-superficie="heroe">
+  <div class="wrap cabecera__fila">
+    <a class="sh-marca" href="index.html" aria-label="SIEN Smart Space — inicio">
+      <img class="sh-iso-oscuro" src="assets/iso-blanco.png" alt="" width="34" height="34">
+      <img class="sh-iso-claro" src="assets/iso-deep.png" alt="" width="34" height="34">
+      <span><b>SIEN</b><small>Smart Space</small></span>
+    </a>
+    <nav class="cabecera__nav" aria-label="Sitio">
+      <a href="index.html">Inicio</a>
+      <a href="blog.html">Blog</a>
+      <a href="faqs.html">FAQs</a>
+      <a class="sh-nav-quiz" href="que-necesito.html#retail" data-quiz-abrir data-origen="menu">¿Qué necesito?</a>
+    </nav>
+    <div class="cabecera__lado">
+      <a class="btn cabecera__cta" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20quiero%20saber%20si%20Smart%20Space%20aplica%20para%20mi%20%5Bcasa%20/%20oficina%20/%20local%20/%20bodega%5D%20en%20%5Bciudad%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="menu">WhatsApp</a>
+      <button type="button" class="cabecera__menu" data-menu-boton aria-expanded="false" aria-controls="panel-movil" aria-label="Abrir menú"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="wrap sh-lineas" aria-label="Líneas Smart Space">
+    <nav class="cabecera__nav sh-lineas__nav" aria-label="Líneas">
+      <a href="house.html">House</a>
+      <a href="office.html">Office</a>
+      <a href="retail.html" aria-current="page">Retail</a>
+      <a href="warehouse.html">Warehouse</a>
+    </nav>
+  </div>
+  <div class="cabecera__panel" id="panel-movil" data-menu-panel hidden>
+    <span class="sh-marca" aria-hidden="true"><img src="assets/iso-blanco.png" alt="" width="34" height="34"><span><b>SIEN</b><small>Smart Space</small></span></span>
+    <nav aria-label="Sitio">
+      <a href="index.html">Inicio</a>
+      <a href="blog.html">Blog</a>
+      <a href="faqs.html">FAQs</a>
+      <a class="sh-nav-quiz" href="que-necesito.html#retail" data-quiz-abrir data-origen="menu">¿Qué necesito?</a>
+    </nav>
+    <span class="sh-panel-rotulo">Líneas Smart Space</span>
+    <nav aria-label="Líneas">
+      <a href="house.html">House</a>
+      <a href="office.html">Office</a>
+      <a href="retail.html" aria-current="page">Retail</a>
+      <a href="warehouse.html">Warehouse</a>
+    </nav>
+    <a class="btn btn-cta" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20quiero%20saber%20si%20Smart%20Space%20aplica%20para%20mi%20%5Bcasa%20/%20oficina%20/%20local%20/%20bodega%5D%20en%20%5Bciudad%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="menu">Escríbenos por WhatsApp</a>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- 1 · HÉROE ANCHO -->
+<section class="heroe sh-heroe sh-heroe--ancho" id="inicio" data-fondo="tinta" data-tunel="propio" data-seccion="hero">
+  <div class="sh-foto" aria-hidden="true">
+    <picture>
+      <source media="(max-width:700px)" srcset="assets/retail-heroe-m.webp">
+      <img src="assets/retail-heroe.webp" alt="" width="2400" height="1350" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap tunel__frente">
+    <div>
+      <span class="rotulo rotulo--heroe sh-entra sh-entra--abajo" style="--e:0ms">Smart Space Retail</span>
+      <h1 class="t-h1 sh-entra sh-entra--izq" style="--e:120ms">Un local que abre, cierra y avisa. Todos los días igual.</h1>
+      <p class="lead sh-entra sh-entra--abajo" style="--e:520ms">Luz, horarios, accesos y fugas bajo control en cada sucursal, con evidencia de apertura y cierre sin pedirle nada al personal.</p>
+      <p class="sh-claim sh-entra sh-entra--abajo" style="--e:640ms">Paquetes desde $35,900 + IVA · una sede o tres</p>
+      <div class="heroe__acciones sh-entra sh-entra--abajo" style="--e:760ms">
+        <a class="btn btn-cta" href="que-necesito.html#retail" data-quiz-abrir data-origen="hero">¿Qué necesita mi local?</a>
+        <a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Smart%20Space%20Retail%20para%20%5Bn%5D%20local%28es%29%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="hero"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · LA JORNADA -->
+<section class="acto acto--tinta sh-sec-vidrio" id="jornada" data-fondo="tinta" data-halo data-seccion="jornada" aria-labelledby="t-jornada">
+  <div class="sh-foto sh-foto--suave sh-foto--alta" aria-hidden="true">
+    <picture>
+      <source media="(max-width:700px)" srcset="assets/retail-jornada-m.webp">
+      <img src="assets/retail-jornada.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap">
+    <span class="rotulo" data-cortina>La jornada de una sucursal</span>
+    <h2 class="t-h2" id="t-jornada" data-lineas data-lineas-delay="90" style="max-width:22ch">De la apertura al cierre, sin que nadie esté pendiente.</h2>
+    <p class="lead" data-reveal="fade-up" data-reveal-delay="180">Cuatro momentos que se repiten cada día en cada local. Cada uno deja evidencia.</p>
+    <ol class="sh-jornada" data-anillo data-reveal="fade-up" data-reveal-delay="260" style="--n:4" aria-label="La jornada de una sucursal">
+      <li class="sh-cap sh-hora" data-reveal="fade-up"><button type="button"><time>08:55</time><b>Abre</b><p>Queda registrado a qué hora abrió el local, sin que nadie lo reporte.</p></button></li>
+      <li class="sh-cap sh-hora" data-reveal="fade-up"><button type="button"><time>12:40</time><b>Una fuga</b><p>El sensor bajo la tarja avisa antes de que el agua llegue al inventario.</p></button></li>
+      <li class="sh-cap sh-hora" data-reveal="fade-up"><button type="button"><time>17:15</time><b>Entrada por bodega</b><p>Apertura fuera de lo esperado: aviso al celular del responsable, con hora.</p></button></li>
+      <li class="sh-cap sh-hora" data-reveal="fade-up"><button type="button"><time>21:05</time><b>Cierra</b><p>Luces y cargas se apagan solas al cierre. Evidencia de cierre por local.</p></button></li>
+    </ol>
+    <div class="sh-banda sh-banda--vidrio" data-reveal="fade-up">
+      <div><b>¿Cuáles serían las de tu local?</b><p>Seis preguntas y te contamos qué haría sola tu local y con qué paquete empieza.</p></div>
+      <a class="btn btn-cta" href="que-necesito.html#retail" data-quiz-abrir data-origen="relato">¿Qué necesita mi local?</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · EL MOSTRADOR -->
+<section class="acto acto--tinta sh-sec-vidrio" id="paquetes" data-fondo="tinta" data-halo data-seccion="paquetes" aria-labelledby="t-paquetes">
+  <div class="sh-foto sh-foto--suave sh-foto--baja" aria-hidden="true">
+    <picture>
+      <source media="(max-width:700px)" srcset="assets/retail-mostrador-m.webp">
+      <img src="assets/retail-mostrador.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap">
+    <span class="rotulo" data-cortina>Paquetes Retail · precios + IVA</span>
+    <h2 class="t-h2" id="t-paquetes" data-lineas data-lineas-delay="90" style="max-width:20ch">Una sede, más áreas o tres locales iguales.</h2>
+    <p class="lead" data-reveal="fade-up" data-reveal-delay="180">Cada sede opera por su cuenta. Red 3 Sedes es el mismo estándar instalado en tres locales de una misma plaza, con ejecución y reporte homogéneos.</p>
+    <div class="sh-mostrador sh-mostrador--tabla sh-mostrador--3" data-reveal="fade-up" data-reveal-delay="240">
+      <table>
+        <thead><tr><th scope="col"><span class="sr-solo">Concepto</span></th><th scope="col"><i>Sede</i>Retail Sede</th><th scope="col"><i>Plus</i>Retail Plus</th><th scope="col"><i>Red</i>Retail Red 3 Sedes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Para quién</th><td>Un local de hasta 120 m²</td><td>Un local de hasta 200 m²</td><td>Tres locales de hasta 120 m² cada uno</td></tr>
+          <tr><th scope="row">Resuelve</th><td>Cierre, horarios, entradas y fugas puntuales</td><td>Más áreas, medición de consumo y clima auxiliar compatible</td><td>Mismo estándar en cada local, ejecución y reporte homogéneos</td></tr>
+          <tr><th scope="row">Controlador y respaldo eléctrico</th><td>1</td><td>1</td><td>3 (uno por local)</td></tr>
+          <tr><th scope="row">Sensores de apertura · movimiento · temperatura · fuga</th><td>Sí</td><td>Sí, más áreas</td><td>Sí, por local</td></tr>
+          <tr><th scope="row">Circuitos de luz</th><td>2</td><td>4</td><td>2 por local</td></tr>
+          <tr><th scope="row">Contactos medidos</th><td>2</td><td>3</td><td>2 por local</td></tr>
+          <tr><th scope="row">Medidor de tablero · control IR</th><td>—</td><td>Sí</td><td>—</td></tr>
+          <tr><th scope="row">Automatizaciones</th><td>6</td><td>10</td><td>6 por local</td></tr>
+          <tr><th scope="row">Evidencia de apertura y cierre</th><td>Por local</td><td>Local + resumen</td><td>Reporte mensual asistido</td></tr>
+          <tr class="sh-mostrador__precio"><th scope="row">Desde</th><td><em>$35,900</em><small>+ IVA</small></td><td><em>$54,900</em><small>+ IVA</small></td><td><em>$103,900</em><small>+ IVA · 3 locales</small></td></tr>
+          <tr class="sh-mostrador__cta"><th scope="row"><span class="sr-solo">Cotizar</span></th><td><a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Retail%20Sede%20para%20un%20local%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail_sede"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Cotizar Sede</a></td><td><a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Retail%20Plus%20para%20un%20local%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail_plus"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Cotizar Plus</a></td><td><a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Retail%20Red%203%20Sedes%20para%203%20locales%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail_red"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Cotizar Red</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="sh-puertas sh-paqs sh-mostrador--tarjetas" data-reveal-stagger="90" aria-label="Paquetes Retail · precios + IVA">
+      <li data-reveal="fade-up"><article class="sh-puerta sh-ficha"><i>Sede</i><b>Retail Sede</b><dl><div class="sh-ficha__fila"><dt>Para quién</dt><dd>Un local de hasta 120 m²</dd></div><div class="sh-ficha__fila"><dt>Resuelve</dt><dd>Cierre, horarios, entradas y fugas puntuales</dd></div><div class="sh-ficha__fila"><dt>Controlador y respaldo eléctrico</dt><dd>1</dd></div><div class="sh-ficha__fila"><dt>Sensores de apertura · movimiento · temperatura · fuga</dt><dd>Sí</dd></div><div class="sh-ficha__fila"><dt>Circuitos de luz</dt><dd>2</dd></div><div class="sh-ficha__fila"><dt>Contactos medidos</dt><dd>2</dd></div><div class="sh-ficha__fila"><dt>Medidor de tablero · control IR</dt><dd>—</dd></div><div class="sh-ficha__fila"><dt>Automatizaciones</dt><dd>6</dd></div><div class="sh-ficha__fila"><dt>Evidencia de apertura y cierre</dt><dd>Por local</dd></div></dl><em>Desde $35,900 <small>+ IVA</small></em><a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Retail%20Sede%20para%20un%20local%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail_sede"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Cotizar Sede</a></article></li>
+      <li data-reveal="fade-up"><article class="sh-puerta sh-ficha"><i>Plus</i><b>Retail Plus</b><dl><div class="sh-ficha__fila"><dt>Para quién</dt><dd>Un local de hasta 200 m²</dd></div><div class="sh-ficha__fila"><dt>Resuelve</dt><dd>Más áreas, medición de consumo y clima auxiliar compatible</dd></div><div class="sh-ficha__fila"><dt>Controlador y respaldo eléctrico</dt><dd>1</dd></div><div class="sh-ficha__fila"><dt>Sensores de apertura · movimiento · temperatura · fuga</dt><dd>Sí, más áreas</dd></div><div class="sh-ficha__fila"><dt>Circuitos de luz</dt><dd>4</dd></div><div class="sh-ficha__fila"><dt>Contactos medidos</dt><dd>3</dd></div><div class="sh-ficha__fila"><dt>Medidor de tablero · control IR</dt><dd>Sí</dd></div><div class="sh-ficha__fila"><dt>Automatizaciones</dt><dd>10</dd></div><div class="sh-ficha__fila"><dt>Evidencia de apertura y cierre</dt><dd>Local + resumen</dd></div></dl><em>Desde $54,900 <small>+ IVA</small></em><a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Retail%20Plus%20para%20un%20local%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail_plus"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Cotizar Plus</a></article></li>
+      <li data-reveal="fade-up"><article class="sh-puerta sh-ficha"><i>Red</i><b>Retail Red 3 Sedes</b><dl><div class="sh-ficha__fila"><dt>Para quién</dt><dd>Tres locales de hasta 120 m² cada uno</dd></div><div class="sh-ficha__fila"><dt>Resuelve</dt><dd>Mismo estándar en cada local, ejecución y reporte homogéneos</dd></div><div class="sh-ficha__fila"><dt>Controlador y respaldo eléctrico</dt><dd>3 (uno por local)</dd></div><div class="sh-ficha__fila"><dt>Sensores de apertura · movimiento · temperatura · fuga</dt><dd>Sí, por local</dd></div><div class="sh-ficha__fila"><dt>Circuitos de luz</dt><dd>2 por local</dd></div><div class="sh-ficha__fila"><dt>Contactos medidos</dt><dd>2 por local</dd></div><div class="sh-ficha__fila"><dt>Medidor de tablero · control IR</dt><dd>—</dd></div><div class="sh-ficha__fila"><dt>Automatizaciones</dt><dd>6 por local</dd></div><div class="sh-ficha__fila"><dt>Evidencia de apertura y cierre</dt><dd>Reporte mensual asistido</dd></div></dl><em>Desde $103,900 <small>+ IVA · 3 locales</small></em><a class="btn sh-btn-glass" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Retail%20Red%203%20Sedes%20para%203%20locales%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail_red"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Cotizar Red</a></article></li>
+    </ul>
+    <p class="sh-caps-pie" data-reveal="fade-up">Incluyen diseño, instalación, capacitación al responsable, documentación y acta por local. Probamos apertura y cierre sin interferir con punto de venta, cajas ni sistema de seguridad. Red 3 Sedes requiere los tres locales en una misma plaza y el mismo catálogo de equipo. Precios de referencia; la cotización define el alcance final. Pólizas Care por separado.</p>
+
+    <div class="sh-red" data-reveal="fade-up" aria-label="Cómo funciona Red 3 Sedes">
+      <div class="sh-red__sedes">
+        <div class="sh-red__sede"><svg class="sh-ico"><use href="#i2-tienda"/></svg><b>Sede 1</b><small>Instalación Sede completa</small></div>
+        <div class="sh-red__sede"><svg class="sh-ico"><use href="#i2-tienda"/></svg><b>Sede 2</b><small>Mismo catálogo y escenas</small></div>
+        <div class="sh-red__sede"><svg class="sh-ico"><use href="#i2-tienda"/></svg><b>Sede 3</b><small>Misma plaza, misma logística</small></div>
+      </div>
+      <div class="sh-red__flecha" aria-hidden="true"><svg class="sh-ico"><use href="#i2-flecha"/></svg></div>
+      <div class="sh-red__reporte"><svg class="sh-ico"><use href="#i2-chip"/></svg><b>Reporte mensual asistido</b><small>Apertura, cierre y anomalías de las tres sedes en un solo documento. No es un panel consolidado en vivo.</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · ZIG-ZAG CLARO -->
+<section class="acto sec-luz" id="antes" data-halo data-seccion="antes" aria-label="Antes de cotizar">
+  <div class="wrap">
+    <div class="sh-zig">
+      <div class="sh-zig__texto" data-reveal="fade-right">
+        <span class="rotulo" data-cortina>Si vendes alimentos</span>
+        <h2 class="t-h2" style="max-width:18ch">Monitoreamos tu local, no tu cadena fría.</h2>
+      </div>
+      <div class="sh-noes" data-reveal="fade-left"><p>Medimos temperatura y humedad generales del local y te avisamos cuando se salen de lo que acordamos. No es cadena fría certificada, no sustituye el HACCP ni las obligaciones de tu giro.</p></div>
+    </div>
+    <div class="sh-zig sh-zig--inv">
+      <div class="sh-zig__texto" data-reveal="fade-left">
+        <span class="rotulo" data-cortina>Diagnóstico</span>
+        <h2 class="t-h2" style="max-width:18ch">Visita técnica en tu local: $2,500 + IVA.</h2>
+      </div>
+      <div class="sh-noes" data-reveal="fade-right"><p>Probamos apertura y cierre sin tocar tu punto de venta ni tus cajas. Para varias sedes, salimos con una lista de diferencias por inmueble y una propuesta cerrada por local.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · CARE -->
+<section class="acto acto--tinta sh-sec-vidrio" id="care" data-fondo="tinta" data-halo data-seccion="care" aria-labelledby="t-care">
+  <div class="sh-foto sh-foto--suave sh-foto--baja" aria-hidden="true">
+    <picture>
+      <source media="(max-width:700px)" srcset="assets/retail-care-m.webp">
+      <img src="assets/retail-care.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap">
+    <span class="rotulo" data-cortina>Care Business · pólizas por separado · mensual + IVA · por sede</span>
+    <h2 class="t-h2" id="t-care" data-lineas data-lineas-delay="90" style="max-width:22ch">Un espacio que responde solo, con alguien que responde por él.</h2>
+    <p class="lead" data-reveal="fade-up" data-reveal-delay="180">Con Care, SIEN responde por tu sistema después de la entrega: soporte, revisiones y ajustes. Las pólizas se contratan por separado y no están incluidas en el precio del paquete; la garantía de instalación aplica con o sin póliza.</p>
+    <ul class="sh-puertas sh-paqs sh-care2" data-reveal-stagger="90" aria-label="Care Business · pólizas por separado · mensual + IVA · por sede">
+      <li data-reveal="fade-up"><article class="sh-puerta"><i>Care</i><b>Business Care</b><p>Estado del hub, respaldo, informe y hasta 2 h remotas en horario hábil.</p><p class="sh-noinc">No incluye SLA 24/7, trabajos eléctricos ni viajes fuera de plaza.</p><em>$1,490 <small>al mes + IVA · por sede</small></em></article></li>
+      <li data-reveal="fade-up"><article class="sh-puerta"><i>Care Plus</i><b>Business Care Plus</b><p>Hasta 3 h remotas, 1 visita anual, reporte de incidencias.</p><p class="sh-noinc">No incluye servicio sobre sistemas críticos.</p><em>$2,490 <small>al mes + IVA · por sede</small></em></article></li>
+    </ul>
+  </div>
+</section>
+
+<!-- LO QUE NO ES -->
+<section class="acto sec-luz" id="lo-que-no-es" data-halo data-seccion="lo-que-no-es" aria-labelledby="t-noes">
+  <div class="wrap">
+    <div class="sh-noes" data-reveal="fade-up">
+      <span class="rotulo" data-cortina>Lo que no es</span>
+      <h2 class="t-h3" id="t-noes">Para que no haya sorpresas.</h2>
+      <p>Smart Space no sustituye una central contra incendios certificada, una alarma monitoreada profesional, sistemas normados de evacuación o protección civil, equipo médico ni cadena de frío validada. Si tu espacio necesita alguno de ellos, te lo decimos en el diagnóstico y trabajamos junto al proveedor acreditado.</p><p>Smart Space Retail no es una alarma monitoreada ni un sistema de videovigilancia 24×7 atendido. No garantiza conservación de alimentos ni sustituye sistemas normados.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="sh-cierre" id="cierre" data-seccion="cierre" aria-labelledby="t-cierre">
+  <div class="wrap">
+    <span class="rotulo" data-cortina>Empecemos</span>
+    <h2 id="t-cierre" data-lineas data-lineas-delay="90">Dinos cuántos locales tienes y te decimos cómo estandarizarlos.</h2>
+    <p data-reveal="fade-up" data-reveal-delay="180">Un mensaje basta. En la primera respuesta sabes si llegamos a tu zona.</p>
+    <div class="heroe__acciones" data-reveal="fade-up" data-reveal-delay="300">
+      <a class="btn btn-cta" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Smart%20Space%20Retail%20para%20%5Bn%5D%20local%28es%29%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa data-origen="retail"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg>Escríbenos por WhatsApp</a>
+      <a class="btn sh-btn-glass" href="que-necesito.html#retail" data-quiz-abrir data-origen="cierre">¿Qué necesita mi local?</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="colofon">
+  <div class="wrap">
+    <div class="colofon__rejilla">
+      <div class="colofon__marca">
+        <span class="sh-marca"><img src="assets/iso-mint.png" alt="" width="34" height="34"><span><b>SIEN</b><small>Smart Space</small></span></span>
+        <span class="colofon__seña">Una marca de SIEN Tecnología · Ingeniería aplicada a problemas reales.</span>
+      </div>
+      <nav class="colofon__redes" aria-label="Secciones">
+        <a href="index.html" style="width:auto;padding-inline:var(--s-3)">Inicio</a>
+      <a href="blog.html" style="width:auto;padding-inline:var(--s-3)">Blog</a>
+      <a href="faqs.html" style="width:auto;padding-inline:var(--s-3)">FAQs</a>
+      <a href="house.html" style="width:auto;padding-inline:var(--s-3)">House</a>
+      <a href="office.html" style="width:auto;padding-inline:var(--s-3)">Office</a>
+      <a href="retail.html" style="width:auto;padding-inline:var(--s-3)">Retail</a>
+      <a href="warehouse.html" style="width:auto;padding-inline:var(--s-3)">Warehouse</a>
+      <a href="que-necesito.html" style="width:auto;padding-inline:var(--s-3)">¿Qué necesito?</a>
+      </nav>
+    </div>
+    <div class="colofon__legal">
+      <span>SIEN Tecnología © 2026</span>
+      <a href="aviso-de-privacidad.html">Aviso de privacidad</a>
+      <a href="terminos.html">Términos</a>
+    </div>
+  </div>
+</footer>
+<a class="sh-wa" href="https://wa.me/525664564795?text=Hola%20SIEN%2C%20me%20interesa%20Smart%20Space%20Retail%20para%20%5Bn%5D%20local%28es%29%20de%20%5Bm%C2%B2%5D%20en%20%5Bciudad%5D.%20Giro%3A%20%5Bgiro%5D." target="_blank" rel="noopener noreferrer" data-wa-flotante aria-label="Escríbenos por WhatsApp"><svg class="sh-ico"><use href="#i2-whatsapp"/></svg><span>WhatsApp</span></a>
+</body>
+</html>

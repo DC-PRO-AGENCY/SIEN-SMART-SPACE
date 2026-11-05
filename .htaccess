@@ -1,0 +1,20 @@
+# SIEN Smart Space · Hostinger (LiteSpeed)
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # HTTPS obligatorio: la CSP del sitio fuerza upgrade-insecure-requests
+  # y en HTTP plano los recursos no cargan.
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Archivos del repositorio que no son del sitio: con el despliegue desde
+  # GitHub quedan dentro de public_html, así que responden 404.
+  RewriteRule (^|/)\.git(/|$) - [R=404,L]
+  RewriteRule (^|/)\.gitignore$ - [R=404,L]
+  RewriteRule ^README\.md$ - [NC,R=404,L]
+  RewriteRule ^\.ftp-deploy-sync-state\.json$ - [R=404,L]
+</IfModule>
