@@ -574,6 +574,7 @@
     var caja = $('[data-quiz-opciones]');
     vacia(caja);
     caja.className = 'sh-opciones' + (P.ops.length === 3 ? ' sh-opciones--3' : '');
+    if (P.ops.every(function (o) { return o.t.length <= 20; })) caja.classList.add('sh-opciones--cortas'); /* DC PRO: en celular, 2 columnas sólo con textos cortos */
     caja.setAttribute('aria-label', P.q);
     var sel = r[P.k] || (P.tipo === 'varias' ? [] : '');
     P.ops.forEach(function (o) {
