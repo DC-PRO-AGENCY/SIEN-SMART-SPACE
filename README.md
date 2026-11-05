@@ -13,3 +13,7 @@ Prototipo estático (HTML + CSS + JS, sin build) para revisión de SIEN en domin
 - CSP en `<meta>`: **no instalar GTM** sin añadir la huella SHA-256 del snippet o servirlo con nonce (ver ficha de implementación RC3.2).
 - `aviso-de-privacidad.html` y `terminos.html` aún no existen (404 esperado).
 - `iconografia.html` es hoja de referencia interna; nadie la enlaza. Pendiente decidir si se quita.
+
+## Caché (Hostinger CDN)
+
+Hostinger cachea CSS/JS 7 días. Los HTML los piden con `?v=AAAAMMDD` (p. ej. `sh.css?v=20261105`): **cada vez que cambie un .css o .js, sube ese número en los 8 HTML** o los visitantes seguirán viendo la versión anterior. Si algo no se actualiza, en hPanel: Rendimiento → CDN → Purgar caché.
