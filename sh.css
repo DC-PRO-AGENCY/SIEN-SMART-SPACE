@@ -1070,3 +1070,61 @@ body[data-ruta]>main,body[data-ruta]>footer,body[data-ruta]>.cabecera{visibility
 .sh-res__cab h1{overflow-wrap:break-word}
 .sh-res__bloque,.sh-relato,.sh-relato article{grid-template-columns:minmax(0,1fr)}
 @media(min-width:760px){.sh-relato article{grid-template-columns:200px minmax(0,1fr)}}
+
+/* ── fix blog: imágenes de tarjeta (DC PRO, 2026-11-05) ──
+   img{max-width:100%} de sistema.css impedía el sangrado a orilla y el
+   height="675" del HTML fijaba 675 px de alto: imagen angosta y tarjetas
+   alargadas. Se libera el ancho y se devuelve el alto al aspect-ratio 16/9.
+   En portada (≥900 px) la nota grande llena con su imagen el alto que le
+   marca la columna lateral, en vez de dejar un hueco bajo el texto. */
+.sh-nota__img{max-width:none;height:auto}
+@media(min-width:900px){
+  .sh-nota--grande a{grid-template-rows:minmax(0,1fr)}
+  .sh-nota--grande .sh-nota__img{height:100%;min-height:280px;aspect-ratio:auto}
+}
+
+/* ── barrido UX (DC PRO, 2026-11-05) ──
+   El relleno de tarjeta (--rc-pad, 32→40px) está pensado para tarjetas
+   anchas; en rejillas de 4-5 columnas dejaba ~100px de texto y las
+   tarjetas se alargaban 6-8 renglones. Se compacta sólo en esas rejillas,
+   sin bajar el cuerpo de 16px. */
+.btn{white-space:nowrap}
+@media(min-width:900px){
+  .sh-jornada,.sh-puertas--4,.sh-garantias,.sh-caps,.sh-red__sedes{--rc-pad:clamp(1.25rem,.75rem + .9vw,1.75rem)}
+  .sh-jornada{gap:var(--s-4)}
+  .sh-red{grid-template-columns:minmax(0,2fr) auto minmax(280px,1.15fr)}
+  .sh-red__sede{padding:var(--s-4) var(--s-3)}
+  .sh-mostrador th,.sh-mostrador td{padding:var(--s-3) var(--s-3)}
+  .sh-mostrador tbody th{width:20%}
+  .sh-mostrador thead th{font-size:1.25rem}
+}
+@media(min-width:1100px){.sh-puertas--4 .sh-puerta>b{font-size:1.375rem;line-height:1.2}.sh-puertas--4 .sh-puerta em{white-space:nowrap}}
+/* celular: titulares de sección de 34px partían frases en 4-5 renglones */
+@media(max-width:599px){:root{--t-h2:clamp(1.75rem,1.2rem + 2.7vw,2.125rem)}}
+/* tablet: 4 columnas de garantías dejaban ~70px de texto */
+@media(min-width:700px) and (max-width:1023px){.sh-garantias{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sh-red__reporte .btn{white-space:normal;text-align:left}
+/* celular: fichas de paquete. Las filas cortas (Sí, —, cifras) van en una
+   línea etiqueta | valor; "Para quién" y "Resuelve" siguen apiladas.
+   Cada ficha baja ~45% de alto. */
+.sh-ficha__fila:nth-child(n+3){grid-template-columns:minmax(0,1fr) fit-content(45%);column-gap:var(--s-4);align-items:baseline}
+.sh-ficha__fila:nth-child(n+3) dd{text-align:right}
+.sh-ficha dl{gap:var(--s-2)}
+.sh-ficha__fila{padding-bottom:var(--s-2)}
+/* celular: los paquetes en carrusel deslizable (scroll-snap) en vez de
+   4 fichas apiladas; asoma la siguiente para que se entienda que hay más */
+@media(max-width:639px){
+  .sh-mostrador--tarjetas{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:86%;gap:var(--s-3);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--s-5);margin-inline:calc(-1 * var(--s-5));padding:var(--s-2) var(--s-5) var(--s-4);scrollbar-width:thin}
+  .sh-mostrador--tarjetas>li{scroll-snap-align:start}
+}
+/* LCP: el h1 del héroe es el elemento LCP en todas las páginas; con
+   opacity:0 de arranque el navegador no lo cuenta hasta que termina de
+   aparecer (~1 s). Se conserva el desplazamiento, sin el desvanecido. */
+.t-h1.sh-entra--izq{animation-name:sh-entra-izq-solo;animation-delay:0ms}
+@keyframes sh-entra-izq-solo{from{transform:translate3d(-48px,0,0)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.t-h1.sh-entra--izq{animation:none}}
+/* celular: enlaces del pie en rejilla de 2 (antes 3-3-1-1 disparejos) */
+@media(max-width:599px){
+  .colofon__redes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s-5);row-gap:0;width:100%}
+  .colofon .colofon__redes a{width:auto;justify-content:flex-start;padding-inline:0;margin:0}
+}
