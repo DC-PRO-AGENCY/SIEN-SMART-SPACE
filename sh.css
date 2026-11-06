@@ -1331,3 +1331,10 @@ html[data-panel-abierto] .cabecera__fila .sh-marca,html[data-panel-abierto] .cab
   /* el PDF no tiene formulario: deja el canal y el código para retomar */
   .sh-res:after{content:"¿Seguimos? Escríbenos por WhatsApp al +52 56 6456 4795 y menciona tu código " attr(data-codigo) ".";display:block;margin-top:16px;padding:10px 14px;border:1px solid #C9D6D4;border-radius:10px;font-weight:600;color:#0A1211;break-inside:avoid}
 }
+
+/* ── Héroe con video (House) ─────────────────────────────────────────────
+   La foto es el LCP y el respaldo; el video entra encima con fundido cuando
+   ya está reproduciendo. El velo (.sh-foto:after) queda por encima. */
+.sh-foto__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:0;transition:opacity .9s ease;pointer-events:none}
+.sh-foto__video.is-vivo{opacity:1}
+@media(prefers-reduced-motion:reduce){.sh-foto__video{display:none}}
