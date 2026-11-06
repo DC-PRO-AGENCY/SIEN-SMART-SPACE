@@ -961,3 +961,29 @@
     document.addEventListener('visibilitychange', function () { if (document.hidden) cancelAnimationFrame(raf); else { tPrev = 0; raf = requestAnimationFrame(paso); } });
   } else { siembra(); }
 })();
+
+/* ── Héroe con video ──────────────────────────────────────────────────────
+   No compite con la carga: se pide hasta después de "load" y en un hueco
+   libre. Se omite con reduced-motion o ahorro de datos (queda la foto).
+   Se pausa fuera de pantalla o con la pestaña oculta. */
+(function () {
+  var v = document.querySelector('.sh-foto__video');
+  if (!v) return;
+  var c = navigator.connection;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ''))) return;
+  var visible = true;
+  function intenta() { if (visible && !document.hidden) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+  function arranca() {
+    v.src = window.matchMedia('(max-width:700px)').matches ? v.getAttribute('data-video-m') : v.getAttribute('data-video-d');
+    v.muted = true;
+    v.addEventListener('playing', function () { v.classList.add('is-vivo'); }, { once: true });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) { visible = e[0].isIntersecting; if (visible) intenta(); else v.pause(); }).observe(v);
+    }
+    document.addEventListener('visibilitychange', function () { if (document.hidden) v.pause(); else intenta(); });
+    intenta();
+  }
+  function luego() { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(arranca, { timeout: 2000 }); }
+  if (document.readyState === 'complete') luego(); else window.addEventListener('load', luego);
+})();
