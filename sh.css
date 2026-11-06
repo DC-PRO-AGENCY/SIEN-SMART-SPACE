@@ -1307,7 +1307,7 @@ html[data-panel-abierto] .cabecera__fila .sh-marca,html[data-panel-abierto] .cab
   .sh-res [data-reveal],.sh-res .sh-entra,.sh-res [data-lineas] *{opacity:1!important;transform:none!important}
   .sh-res .sh-foto,.sh-res .sh-res__cta:before{display:none!important}
   .sh-res .sh-forma,.sh-res .sh-res__acciones,.sh-res [data-res-forma]{display:none!important}
-  .sh-res article,.sh-res .sh-paquete,.sh-res .sh-res__bloque,.sh-res .sh-res__cta,.sh-res li{break-inside:avoid;border-color:#C9D6D4!important}
+  .sh-res article,.sh-res .sh-paquete,.sh-res .sh-res__cta,.sh-res .sh-relato__cierre,.sh-res li{break-inside:avoid;border-color:#C9D6D4!important}
   .sh-res h1,.sh-res h2{break-after:avoid}
   .sh-res .sh-ico{color:#0B5B57!important}
   .sh-res a{text-decoration:underline}
@@ -1315,4 +1315,19 @@ html[data-panel-abierto] .cabecera__fila .sh-marca,html[data-panel-abierto] .cab
 @media print{
   .sh-res .sh-paq[aria-pressed=true] i,.sh-res .sh-paq[aria-pressed=true] i:before{background:#0B5B57!important;border-color:#0B5B57!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .sh-res .sh-paq[aria-pressed=true]{font-weight:700}
+}
+@media print{
+  /* sin relleno inferior: los ~85px sobrantes abrían una hoja en blanco */
+  .sh-res .sh-res__cuerpo{padding-top:0!important;padding-bottom:0!important}
+  .sh-res>*:last-child,.sh-res__cuerpo>*:last-child{margin-bottom:0!important}
+  html,body{height:auto!important;min-height:0!important}
+}
+@media print{
+  .salto{display:none!important}
+  .sh-res .sh-res__bloque{break-inside:auto}
+  .sh-res .sh-res__cta{padding:12px 16px!important}
+  .sh-res .sh-res__cta h2{font-size:1.25rem!important;line-height:1.2!important}
+  .sh-res .sh-res__cta>p{font-size:.875rem!important}
+  /* el PDF no tiene formulario: deja el canal y el código para retomar */
+  .sh-res:after{content:"¿Seguimos? Escríbenos por WhatsApp al +52 56 6456 4795 y menciona tu código " attr(data-codigo) ".";display:block;margin-top:16px;padding:10px 14px;border:1px solid #C9D6D4;border-radius:10px;font-weight:600;color:#0A1211;break-inside:avoid}
 }
